@@ -5,16 +5,16 @@
 #
 
 CFLAGS  = -Wall -Werror -g -O2 -I../include
-LDFLAGS = -libverbs -lrdmacm -lmlx5
+LDFLAGS = -libverbs -lrdmacm
 RM      = rm -f
 
-all: dc_read_fc
+all: rc_read_fc
 
-dc_read_fc.o: ../include/list.h
+rc_read_fc.o: ../include/list.h
 
-dc_read_fc: dc_read_fc.o
-	$(CC) dc_read_fc.o -o dc_read_fc $(LDFLAGS)
+rc_read_fc: rc_read_fc.o
+	$(CC) rc_read_fc.o -o rc_read_fc $(LDFLAGS)
 	
 clean:
-	$(RM) dc_read_fc.o dc_read_fc
+	$(RM) rc_read_fc.o rc_read_fc
 	
